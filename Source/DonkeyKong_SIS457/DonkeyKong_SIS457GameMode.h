@@ -13,6 +13,13 @@ class ADonkeyKong_SIS457GameMode : public AGameModeBase
 
 public:
 	ADonkeyKong_SIS457GameMode();
+
+	protected:
+		virtual void BeginPlay() override;
+		
+public:
+	virtual void Tick(float DeltaTime) override;
+
 };
 
 

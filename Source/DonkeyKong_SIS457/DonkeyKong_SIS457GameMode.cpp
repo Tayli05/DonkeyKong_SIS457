@@ -13,3 +13,17 @@ ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
 }
+
+void ADonkeyKong_SIS457GameMode::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// mensaje que se muestra en pantalla 
+	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Purple, TEXT("Actor Moviendose"));
+}
+
+void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
+{
+		Super::Tick(DeltaTime);
+}
+
