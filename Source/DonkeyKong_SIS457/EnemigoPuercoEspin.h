@@ -20,4 +20,6 @@ class DONKEYKONG_SIS457_API AEnemigoPuercoEspin : public AEnemigo
 		public:
 			virtual void Tick(float DeltaTime) override;
 	
+
+
 };

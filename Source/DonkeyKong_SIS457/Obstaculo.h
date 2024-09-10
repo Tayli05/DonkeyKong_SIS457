@@ -23,36 +23,22 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	protected:
-		FVector Posicion;
-		float Velocidad;
-		float Direccion;
-		float Danio;
-		float Tiempo;
 
-   public:
-			FVector GetPosicion() { return Posicion; };
-			void SetPosicion(FVector Pos) { Posicion = Pos; };
+protected:
+	UPROPERTY(EditAnywhere);
+	UStaticMeshComponent* MeshObstaculo;
+	
 
-			float GetVelocidad() { return Velocidad; };
-			void SetVelocidad(float Vel) { Velocidad = Vel; };
+	bool subir;
+	FVector posicionInicial;
+	FVector posicionActual;
+	FVector posicionFinal;
+	float incrementoZ;
+	bool detener;
+	
 
-			float GetDireccion() { return Direccion; };
-			void SetDireccion(float Dir) { Direccion = Dir; };
-
-			float GetDanio() { return Danio; };
-			void SetDanio(float D) { Danio = D; };
-
-			float GetTiempo() { return Tiempo; };
-			void SetTiempo(float T) { Tiempo = T; };
-
-	public:
-
-				void MoverObstaculo(float DeltaTime);
-				void CambiarDireccion();
-				void DesaparecerObst();
-				void RecibirDanio();
-
-
+public:
+		bool getDetener() { return detener; };
+		void setDetener(bool d) { detener = d; };
 
 };

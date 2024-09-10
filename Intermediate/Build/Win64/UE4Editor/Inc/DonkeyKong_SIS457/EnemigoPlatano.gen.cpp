@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoPlatano() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoPlatano, 729925046);
+	IMPLEMENT_CLASS(AEnemigoPlatano, 2623000644);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigoPlatano>()
 	{
 		return AEnemigoPlatano::StaticClass();

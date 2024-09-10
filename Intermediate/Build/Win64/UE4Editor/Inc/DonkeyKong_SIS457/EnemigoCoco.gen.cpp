@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoCoco() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoCoco, 236453252);
+	IMPLEMENT_CLASS(AEnemigoCoco, 545792329);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigoCoco>()
 	{
 		return AEnemigoCoco::StaticClass();

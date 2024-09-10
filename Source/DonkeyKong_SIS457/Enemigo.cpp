@@ -8,6 +8,12 @@ AEnemigo::AEnemigo()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	ConstructorHelpers::FObjectFinder<UStaticMesh> MeshEnemigoAsset(TEXT("StaticMesh'/Game/Geometry/Meshes/1M_Cube.1M_Cube'"));
+	MeshEnemigo = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshEnemigo"));
+	MeshEnemigo->SetStaticMesh(MeshEnemigoAsset.Object);
+	RootComponent = MeshEnemigo;
+
+
 
 }
 

@@ -58,7 +58,10 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEnemigo)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_12_PRIVATE_PROPERTY_OFFSET
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__MeshEnemigo() { return STRUCT_OFFSET(AEnemigo, MeshEnemigo); }
+
+
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_9_PROLOG
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

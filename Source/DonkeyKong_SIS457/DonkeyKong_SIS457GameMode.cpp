@@ -3,6 +3,11 @@
 #include "DonkeyKong_SIS457GameMode.h"
 #include "DonkeyKong_SIS457Character.h"
 #include "UObject/ConstructorHelpers.h"
+#include "ComponentePlataforma.h"
+#include "Barril.h"
+#include "Obstaculo.h"
+#include "Containers/Map.h"
+
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -12,6 +17,7 @@ ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
 }
 
 void ADonkeyKong_SIS457GameMode::BeginPlay()
@@ -19,7 +25,62 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	Super::BeginPlay();
 
 	// mensaje que se muestra en pantalla 
-	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Purple, TEXT("Actor Moviendose"));
+	GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Purple, TEXT("Actor Moviendose"));
+
+    // Crear plataformas
+    FVector posicionInicial = FVector(-380.0f,-720.0f, -400.0f);
+    FRotator rotacionInicial = FRotator(0.0f, 0.0f, 11.0f);
+    FTransform SpawnLocationP;
+    float alturaplataformas = 500.0f;
+
+    for (int i = 0; i < 6; i++)
+    {
+        if ( i % 2 == 0) {
+            posicionInicial.Y += 500.0f;
+          posicionInicial.Z += 150.0f;
+           
+        }else{
+            posicionInicial.Y -= 500.0f;
+            posicionInicial.Z -= 100.0f;
+           
+		}
+        if (i % 2 == 1) {
+            rotacionInicial.Roll = 0.0f; // Sin inclinación
+           posicionInicial.Z += 200.0f;
+        }
+        else {
+           rotacionInicial.Roll = 11.0f; // Inclinación
+		 posicionInicial.Z -= 110.0f;
+        }
+        
+        rotacionInicial.Roll = rotacionInicial.Roll * -1;
+        SpawnLocationP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z + (i * alturaplataformas)));
+        AComponentePlataforma* NuevaPlataforma = GetWorld()->SpawnActor<AComponentePlataforma>(SpawnLocationP.GetLocation(), rotacionInicial);
+        Plataformas.Add(i, NuevaPlataforma);
+    }
+
+    //CREAR OBSTACULOS
+   FTransform SpawnLocationO;
+    FVector posicionInicialObstaculo = FVector(2155.0f, -2210.0f, 2750.0f);
+    //FRotator rotacionInicialObstaculo = FRotator(0.0f, 0.0f, 0.0f);
+    float espacioZ = 600.0f;
+    float espacioY = 700.0f;
+    
+    for (int k = 0; k < 5; k++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            SpawnLocationO.SetLocation(FVector(posicionInicialObstaculo.X, posicionInicialObstaculo.Y + (j * espacioY), posicionInicialObstaculo.Z + (k * espacioZ)));
+            AObstaculo* NuevoObstaculo = GetWorld()->SpawnActor<AObstaculo>(SpawnLocationO.GetLocation(), FRotator(0.0f, 0.0f, 0.0f));
+            Obstaculos.Add(NuevoObstaculo);
+        }
+    }
+       
+
+       //CREAR BARRILES
+    GetWorldTimerManager().SetTimer(SpawnBarrilTimerHandle, this, &ADonkeyKong_SIS457GameMode::SpawnBarril, 3.0f, true);
+  
+    
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
@@ -27,3 +88,21 @@ void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
 		Super::Tick(DeltaTime);
 }
 
+void ADonkeyKong_SIS457GameMode::SpawnBarril()
+{
+  
+    if (numeroBarriles < 1) {
+
+       // FVector spawnLocation = FVector(1220.0f, 1450.0f, 3750.0f);
+        FVector spawnLocation = FVector(1280.0f, 1350.0f, 950.0f);
+        FRotator spawnRotation = FRotator(90.0f, 90.0f, 90.0f);
+
+        Barriles.Add(GetWorld()->SpawnActor<ABarril>(spawnLocation, spawnRotation));
+        GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Black, TEXT("Barril Creado"));
+        numeroBarriles++;
+
+    }
+        
+}
+
+//crear un metodo que se enargue de mover los barriles

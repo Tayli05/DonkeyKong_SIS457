@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoEsfera() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoEsfera, 468070629);
+	IMPLEMENT_CLASS(AEnemigoEsfera, 635784266);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigoEsfera>()
 	{
 		return AEnemigoEsfera::StaticClass();

@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoPuercoEspin() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoPuercoEspin, 816445531);
+	IMPLEMENT_CLASS(AEnemigoPuercoEspin, 2719126056);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigoPuercoEspin>()
 	{
 		return AEnemigoPuercoEspin::StaticClass();

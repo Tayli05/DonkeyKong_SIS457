@@ -13,3 +13,9 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFra
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\DonkeyKong_SIS457Character.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\ComponentePlataforma.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\ComponentePlataforma.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Barril.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Barril.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Obstaculo.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Obstaculo.generated.h

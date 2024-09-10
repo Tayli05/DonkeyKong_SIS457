@@ -5,8 +5,11 @@
 
 AEnemigoPuercoEspin::AEnemigoPuercoEspin()
 {
+
 }
 
 void AEnemigoPuercoEspin::Tick(float DeltaTime)
 {
+
+
 }

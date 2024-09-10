@@ -67,4 +67,7 @@ public:
 		virtual void RecibirDanio();
 
 
+protected:
+	UPROPERTY(EditAnywhere)
+	UStaticMeshComponent* MeshEnemigo;
 };

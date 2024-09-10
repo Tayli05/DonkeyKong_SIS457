@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\DonkeyKong_SIS457Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\ComponentePlataforma.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457Character.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457GameMode.cpp.obj"
@@ -44,6 +45,7 @@
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\EnemigoPlatano.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\EnemigoPuercoEspin.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Obstaculo.cpp.obj"
+"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\ComponentePlataforma.gen.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457.init.gen.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457Character.gen.cpp.obj"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457GameMode.gen.cpp.obj"

@@ -58,7 +58,10 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AObstaculo)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Obstaculo_h_12_PRIVATE_PROPERTY_OFFSET
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Obstaculo_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__MeshObstaculo() { return STRUCT_OFFSET(AObstaculo, MeshObstaculo); }
+
+
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Obstaculo_h_9_PROLOG
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Obstaculo_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
