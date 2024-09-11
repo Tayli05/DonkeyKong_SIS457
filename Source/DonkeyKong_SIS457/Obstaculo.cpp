@@ -14,7 +14,6 @@ AObstaculo::AObstaculo()
 	RootComponent = MeshObstaculo;
 
 	MeshObstaculo->SetWorldScale3D(FVector(8.0f, 7.5f, 7.5f));
-	
 
 }
 

@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeComponentePlataforma() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AComponentePlataforma, 3435154206);
+	IMPLEMENT_CLASS(AComponentePlataforma, 1308047974);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AComponentePlataforma>()
 	{
 		return AComponentePlataforma::StaticClass();
