@@ -23,7 +23,7 @@ protected:
 
 	/** Called for side to side input */
 	void MoveRight(float Val);
-	void Fire();
+	
 	
 	/** Handle touch inputs. */
 	void TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location);
@@ -35,14 +35,21 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 
+	// implementar el metodo para disparar
+	virtual void BeginPlay() override;
 
+	bool detener;
 public:
 	ADonkeyKong_SIS457Character();
+
+   // UFUNCTION(BlueprintCallable, Category = "Character")
+	void Fire();
+
 
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	FVector GunOffset;
 
-	/* How fast the weapon will fire */
+	//velocidad de disparo
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	float FireRate;
 
@@ -51,7 +58,8 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
-	void FireShot(FVector FireDirection);
+	//dispara el tiro en la direccion que se le pase
+	//void FireShot(FVector FireDirection);
 
 	/* Handler for the fire timer expiry */
 	void ShotTimerExpired();
@@ -61,16 +69,31 @@ public:
 
 	// Begin Actor Interface
 	virtual void Tick(float DeltaSeconds) override;
+	virtual float TakeDamage(float DamageAmount, const FDamageEvent& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
 	
 	static const FName FireForwardBinding;
 	static const FName FireRightBinding;
 
+	// --- SISTEMA DE VIDA DEL PERSONAJE ---
+	// Salud máxima del personaje
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	float MaxHealth = 100.0f;
+	// Salud actual del personaje
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	float CurrentHealth = 100.0f;
+
+	// Función para determinar si el personaje está vivo
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	bool IsAlive() const;
+
 private:
+	//bandera para saber si se puede disparar
 	uint32 bCanFire : 1;
 
 	/** Handle for efficient management of ShotTimerExpired timer */
 	FTimerHandle TimerHandle_ShotTimerExpired;
+
 
 
 };

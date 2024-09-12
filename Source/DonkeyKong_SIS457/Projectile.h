@@ -9,7 +9,7 @@
 class UProjectileMovementComponent;
 class UStaticMeshComponent;
 
-UCLASS()
+UCLASS(Config = Game)
 class DONKEYKONG_SIS457_API AProjectile : public AActor
 {
 	  

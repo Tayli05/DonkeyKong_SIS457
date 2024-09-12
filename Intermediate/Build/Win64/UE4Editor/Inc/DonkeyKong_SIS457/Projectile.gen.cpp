@@ -179,7 +179,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_AProjectile_Statics::ClassParams = {
 		&AProjectile::StaticClass,
-		"Engine",
+		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		FuncInfo,
@@ -201,7 +201,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AProjectile, 3268367230);
+	IMPLEMENT_CLASS(AProjectile, 3584613026);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AProjectile>()
 	{
 		return AProjectile::StaticClass();

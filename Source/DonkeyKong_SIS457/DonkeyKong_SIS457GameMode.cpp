@@ -7,7 +7,8 @@
 #include "Barril.h"
 #include "Obstaculo.h"
 #include "Containers/Map.h"
-
+#include "Engine/World.h"
+#include "Projectile.h"
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -80,7 +81,13 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
        //CREAR BARRILES
     GetWorldTimerManager().SetTimer(SpawnBarrilTimerHandle, this, &ADonkeyKong_SIS457GameMode::SpawnBarril, 3.0f, true);
   
-    
+
+    FTransform SpawnLocationProjectile;
+    FVector posicionInicialProjectile = FVector(2155.0f, -2210.0f, 2750.0f);
+    FRotator rotacionInicialProjectile = FRotator(0.0f, 0.0f, 0.0f);
+    SpawnLocationP.SetLocation(FVector(posicionInicialProjectile.X, posicionInicialProjectile.Y, posicionInicialProjectile.Z));
+    Proyectil = GetWorld()->SpawnActor<AProjectile>(SpawnLocationP.GetLocation(), rotacionInicialProjectile);
+    GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Black, TEXT("Proyectil Creado"));
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)

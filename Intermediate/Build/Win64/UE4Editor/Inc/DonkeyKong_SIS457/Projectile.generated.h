@@ -34,7 +34,9 @@ private: \
 	friend struct Z_Construct_UClass_AProjectile_Statics; \
 public: \
 	DECLARE_CLASS(AProjectile, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
-	DECLARE_SERIALIZER(AProjectile)
+	DECLARE_SERIALIZER(AProjectile) \
+	static const TCHAR* StaticConfigName() {return TEXT("Game");} \
+
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Projectile_h_16_INCLASS \
@@ -43,7 +45,9 @@ private: \
 	friend struct Z_Construct_UClass_AProjectile_Statics; \
 public: \
 	DECLARE_CLASS(AProjectile, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
-	DECLARE_SERIALIZER(AProjectile)
+	DECLARE_SERIALIZER(AProjectile) \
+	static const TCHAR* StaticConfigName() {return TEXT("Game");} \
+
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Projectile_h_16_STANDARD_CONSTRUCTORS \

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "DonkeyKong_SIS457GameMode.generated.h"
-
+class AProjectile;
 class AComponentePlataforma;
 class AObstaculo;
 class ABarril;
@@ -33,7 +33,7 @@ public:
   TMap<int32, AComponentePlataforma*> Plataformas;
   TArray<AObstaculo*> Obstaculos;
   TArray<ABarril*> Barriles;
-
+  AProjectile* Proyectil;
   //ABarril* Barril01;
  //metodo para mover los barriles
  void SpawnBarril();

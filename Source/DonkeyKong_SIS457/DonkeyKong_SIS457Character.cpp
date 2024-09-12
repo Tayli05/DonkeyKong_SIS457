@@ -6,13 +6,10 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Projectile.h"
-#include "GameFramework/Controller.h"
-#include "Kismet/GameplayStatics.h"
+#include "Blueprint/UserWidget.h"
+#include "GameFramework/Character.h"
 #include "Engine/World.h"
-#include "TimerManager.h"
-#include "Engine/CollisionProfile.h"
-
+#include "Projectile.h"
 
 
 const FName ADonkeyKong_SIS457Character::FireForwardBinding("FireForward");
@@ -20,6 +17,11 @@ const FName ADonkeyKong_SIS457Character::FireRightBinding("FireRight");
 
 ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 {
+	PrimaryActorTick.bCanEverTick = true;
+
+	MaxHealth = 100.0f; // Establece la salud máxima del personaje
+	CurrentHealth = MaxHealth; // Inicializa la salud actual con la salud máxima
+	
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
@@ -33,7 +35,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Rotation of the character should not affect rotation of boom
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->TargetArmLength = 2000.f;
+	CameraBoom->TargetArmLength = 1000.f;
 	CameraBoom->SocketOffset = FVector(0.f,0.f,75.f);
 	CameraBoom->SetRelativeRotation(FRotator(0.f,180.f,0.f));
 
@@ -55,39 +57,13 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 	
-	// Weapon
-	GunOffset = FVector(0.f, 90.f, 0.f);
+	// Inicializa las variables de disparo
+	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
 
 }
 
-void ADonkeyKong_SIS457Character::FireShot(FVector FireDirection)
-{
-	// If it's ok to fire again
-	if (bCanFire == true)
-	{
-		// If we are pressing fire stick in a direction
-		if (FireDirection.SizeSquared() > 0.0f)
-		{
-			const FRotator FireRotation = FireDirection.Rotation();
-			// Spawn projectile at an offset from this pawn
-			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
-			
-
-			UWorld* const World = GetWorld();
-			if (World != nullptr)
-			{
-				// spawn the projectile
-				World->SpawnActor<AProjectile>(SpawnLocation, FireRotation);
-
-			}
-			bCanFire = false;
-			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &ADonkeyKong_SIS457Character::ShotTimerExpired, FireRate);
-
-		}
-	}
-}
 
 void ADonkeyKong_SIS457Character::ShotTimerExpired()
 {
@@ -100,35 +76,32 @@ void ADonkeyKong_SIS457Character::ShotTimerExpired()
 
 void ADonkeyKong_SIS457Character::Tick(float DeltaSeconds)
 {
-	// Create fire direction vector
-	const float FireForwardValue = GetInputAxisValue(FireForwardBinding);
-	const float FireRightValue = GetInputAxisValue(FireRightBinding);
-	const FVector FireDirection = FVector(FireForwardValue, FireRightValue, 0.f);
-
-	// Try and fire a shot
-	FireShot(FireDirection);
+	Super::Tick(DeltaSeconds);
 }
 
 void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
-	// set up gameplay key bindings
+
+	// configurar acciones de juego
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::Fire);
-
 	PlayerInputComponent->BindAxis("MoveRight", this, &ADonkeyKong_SIS457Character::MoveRight);
-	
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_SIS457Character::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
 
 
-
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	check(PlayerInputComponent);
 
-	// set up gameplay key bindings
-	PlayerInputComponent->BindAxis(FireForwardBinding);
-	PlayerInputComponent->BindAxis(FireRightBinding);
+	//Verificar si el jugador presiona la tecla de disparo
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::Fire);
+
+}
+
+void ADonkeyKong_SIS457Character::BeginPlay()
+{
+	Super::BeginPlay();
 
 }
 
@@ -140,11 +113,23 @@ void ADonkeyKong_SIS457Character::MoveRight(float Value)
 
 void ADonkeyKong_SIS457Character::Fire()
 {
-	const float FireForwardValue = GetInputAxisValue(FireForwardBinding);
-	const float FireRightValue = GetInputAxisValue(FireRightBinding);
-	const FVector FireDirection = FVector(FireForwardValue, FireRightValue, 0.f);
+	
+	
+	// Ejemplo de lógica para disparar un proyectil
+	if (UWorld* World = GetWorld())
+	{
+		// Supongamos que tienes un Blueprint de proyectil que has convertido a clase C++ 'AProjectile'
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = GetInstigator();
 
-	FireShot(FireDirection);
+		FVector SpawnLocation = GetActorLocation() + FVector(100, 0, 0); // Ajusta la ubicación del spawn
+		FRotator SpawnRotation = GetActorRotation();
+
+		World->SpawnActor<AProjectile>(SpawnLocation, SpawnRotation, SpawnParams);
+
+	}
+
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Disparo!!"));
 
 }
@@ -160,3 +145,20 @@ void ADonkeyKong_SIS457Character::TouchStopped(const ETouchIndex::Type FingerInd
 	StopJumping();
 }
 
+float ADonkeyKong_SIS457Character::TakeDamage(float DamageAmount, const FDamageEvent& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	
+	CurrentHealth -= DamageAmount;
+	if (CurrentHealth <= 0.0f)
+	{
+		CurrentHealth = 0.0f;
+		// Aquí puedes agregar lógica para manejar la muerte del personaje.
+	}
+	return DamageAmount;
+}
+
+
+bool ADonkeyKong_SIS457Character::IsAlive() const
+{
+	return CurrentHealth > 0.0f;
+}

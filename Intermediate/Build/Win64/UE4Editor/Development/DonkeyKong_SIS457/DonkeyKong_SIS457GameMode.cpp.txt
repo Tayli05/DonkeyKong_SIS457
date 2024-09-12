@@ -19,3 +19,5 @@ E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Barril.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Barril.generated.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Obstaculo.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Obstaculo.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Projectile.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Projectile.generated.h

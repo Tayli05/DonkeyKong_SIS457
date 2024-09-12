@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define DONKEYKONG_SIS457_DonkeyKong_SIS457Character_generated_h
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_SPARSE_DATA
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_RPC_WRAPPERS
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execIsAlive);
+
+
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execIsAlive);
+
+
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADonkeyKong_SIS457Character(); \
