@@ -35,7 +35,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Rotation of the character should not affect rotation of boom
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->TargetArmLength = 1000.f;
+	CameraBoom->TargetArmLength = 1500.f;
 	CameraBoom->SocketOffset = FVector(0.f,0.f,75.f);
 	CameraBoom->SetRelativeRotation(FRotator(0.f,180.f,0.f));
 
@@ -130,7 +130,7 @@ void ADonkeyKong_SIS457Character::Fire()
 
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Disparo!!"));
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Cyan, TEXT("Actor Disparo!!"));
 
 }
 

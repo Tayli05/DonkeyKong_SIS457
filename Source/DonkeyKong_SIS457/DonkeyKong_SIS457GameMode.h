@@ -9,6 +9,7 @@ class AProjectile;
 class AComponentePlataforma;
 class AObstaculo;
 class ABarril;
+class ACubo;
 class ADonkeyKong_SIS457Character;
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
@@ -34,6 +35,8 @@ public:
   TArray<AObstaculo*> Obstaculos;
   TArray<ABarril*> Barriles;
   AProjectile* Proyectil;
+  TArray<ACubo*> CantCajas;
+
   //ABarril* Barril01;
  //metodo para mover los barriles
  void SpawnBarril();

@@ -21,6 +21,9 @@ class DONKEYKONG_SIS457_API AProjectile : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
 
+    //UPROPERTY(VisibleDefaultsOnly,BlueprintReadOnly)
+
+
 public:	
 	// Sets default values for this actor's properties
 	AProjectile();
@@ -41,4 +44,8 @@ public:
 		public:
 		// Called every frame
 		virtual void Tick(float DeltaTime) override;
+
+
+		void FireInDirection(const FVector& ShootDirection);
+		
 };

@@ -9,6 +9,7 @@
 #include "Containers/Map.h"
 #include "Engine/World.h"
 #include "Projectile.h"
+#include "Cubo.h"
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -58,6 +59,8 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
         SpawnLocationP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z + (i * alturaplataformas)));
         AComponentePlataforma* NuevaPlataforma = GetWorld()->SpawnActor<AComponentePlataforma>(SpawnLocationP.GetLocation(), rotacionInicial);
         Plataformas.Add(i, NuevaPlataforma);
+
+
     }
 
     //CREAR OBSTACULOS
@@ -88,6 +91,29 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
     SpawnLocationP.SetLocation(FVector(posicionInicialProjectile.X, posicionInicialProjectile.Y, posicionInicialProjectile.Z));
     Proyectil = GetWorld()->SpawnActor<AProjectile>(SpawnLocationP.GetLocation(), rotacionInicialProjectile);
     GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Black, TEXT("Proyectil Creado"));
+
+  //CREAR CUBOs
+
+    float minX = 1200.0f;
+    float maxX = 1200.0f;
+    float minY = -1200.0f;
+    float maxY = 1000.0f;
+    float minZ = 600.0f;
+    float maxZ = 3500.0f;
+
+    for (int32 i = 0; i < 5; i++)
+    {
+        // Generar una ubicación aleatoria dentro del rango definido
+        FVector RandomLocation = FVector(
+            FMath::RandRange(minX, maxX), // Posición X aleatoria
+            FMath::RandRange(minY, maxY), // Posición Y aleatoria
+            FMath::RandRange(minZ, maxZ)  // Posición Z aleatoria
+        );
+
+        // Spawn de la caja en la ubicación aleatoria
+        CantCajas.Add(GetWorld()->SpawnActor<ACubo>(RandomLocation, FRotator(0.0f, 0.0f, 0.0f)));
+    }
+   
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
