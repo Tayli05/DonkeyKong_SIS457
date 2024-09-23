@@ -14,12 +14,12 @@ ABarril::ABarril()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	ConstructorHelpers::FObjectFinder<UStaticMesh> BarrilMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'"));
+	ConstructorHelpers::FObjectFinder<UStaticMesh> BarrilMesh(TEXT("StaticMesh'/Game/Geometry/Meshes/Assets/Donkey_Kong_Level_1_Barrel011.Donkey_Kong_Level_1_Barrel011'"));
 	MeshBarril = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BarrilMesh"));
 	MeshBarril->SetStaticMesh(BarrilMesh.Object);
 	RootComponent = MeshBarril;
 
-	MeshBarril->SetWorldScale3D(FVector(1.5f, 1.5f, 1.5f));
+	MeshBarril->SetWorldScale3D(FVector(3.5f, 3.5f, 3.5f));
 
 	//ACTIVAR FISICAS
 	MeshBarril->SetSimulatePhysics(true);

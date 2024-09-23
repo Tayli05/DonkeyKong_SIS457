@@ -10,6 +10,11 @@
 #include "Engine/World.h"
 #include "Projectile.h"
 #include "Cubo.h"
+#include "Muro.h"
+#include "MuroElectrico.h"
+#include "MuroCongelado.h"
+#include "MuroPegajoso.h"
+#include "MuroLadrillo.h"
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -65,7 +70,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
     //CREAR OBSTACULOS
    FTransform SpawnLocationO;
-    FVector posicionInicialObstaculo = FVector(2155.0f, -2210.0f, 2750.0f);
+    FVector posicionInicialObstaculo = FVector(2580.0f, 510.0f, 2750.0f);
     //FRotator rotacionInicialObstaculo = FRotator(0.0f, 0.0f, 0.0f);
     float espacioZ = 600.0f;
     float espacioY = 700.0f;
@@ -75,7 +80,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
         for (int j = 0; j < 3; j++)
         {
             SpawnLocationO.SetLocation(FVector(posicionInicialObstaculo.X, posicionInicialObstaculo.Y + (j * espacioY), posicionInicialObstaculo.Z + (k * espacioZ)));
-            AObstaculo* NuevoObstaculo = GetWorld()->SpawnActor<AObstaculo>(SpawnLocationO.GetLocation(), FRotator(0.0f, 0.0f, 0.0f));
+            AObstaculo* NuevoObstaculo = GetWorld()->SpawnActor<AObstaculo>(SpawnLocationO.GetLocation(), FRotator(0.0f, 90.0f, 0.0f));
             Obstaculos.Add(NuevoObstaculo);
         }
     }
@@ -98,8 +103,8 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
     float maxX = 1200.0f;
     float minY = -1200.0f;
     float maxY = 1000.0f;
-    float minZ = 600.0f;
-    float maxZ = 3500.0f;
+    float minZ = 1000.0f;
+    float maxZ = 4000.0f;
 
     for (int32 i = 0; i < 5; i++)
     {
@@ -114,6 +119,14 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
         CantCajas.Add(GetWorld()->SpawnActor<ACubo>(RandomLocation, FRotator(0.0f, 0.0f, 0.0f)));
     }
    
+	//CREAR MUROS
+
+    GetWorld()->SpawnActor < AMuroLadrillo > (AMuroLadrillo::StaticClass(),FVector(950.0f, -600.0f, 700.0f), FRotator(0.0f, 0.0f, 0.0f));
+	GetWorld()->SpawnActor < AMuroElectrico >(AMuroElectrico::StaticClass(), FVector(1050.0f, -600.0f, 1750.0f), FRotator(0.0f, 0.0f, 0.0f));
+	GetWorld()->SpawnActor < AMuroCongelado >(AMuroCongelado::StaticClass(), FVector(1000.0f, 720.0f, 2400.0f), FRotator(0.0f, 0.0f, 0.0f));
+	GetWorld()->SpawnActor < AMuroPegajoso >(AMuroPegajoso::StaticClass(), FVector(1200.0f, -850.0f, 2800.0f), FRotator(0.0f, 0.0f, 0.0f));
+
+
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
@@ -127,8 +140,8 @@ void ADonkeyKong_SIS457GameMode::SpawnBarril()
     if (numeroBarriles < 1) {
 
        // FVector spawnLocation = FVector(1220.0f, 1450.0f, 3750.0f);
-        FVector spawnLocation = FVector(1280.0f, 1350.0f, 950.0f);
-        FRotator spawnRotation = FRotator(90.0f, 90.0f, 90.0f);
+        FVector spawnLocation = FVector(2150.0f, 2800.0f, 1050.0f);
+        FRotator spawnRotation = FRotator(0.0f, 90.0f, 90.0f);
 
         Barriles.Add(GetWorld()->SpawnActor<ABarril>(spawnLocation, spawnRotation));
         GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Black, TEXT("Barril Creado"));

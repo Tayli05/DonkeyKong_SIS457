@@ -23,3 +23,13 @@ E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Projectile.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Projectile.generated.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Cubo.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Cubo.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Muro.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Muro.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroElectrico.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroElectrico.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroCongelado.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroCongelado.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroPegajoso.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroPegajoso.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroLadrillo.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroLadrillo.generated.h

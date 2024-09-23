@@ -33,46 +33,49 @@ void AComponentePlataforma::BeginPlay()
 	incrementoY = 2.0f;
 	mover = false;
 	setDetener(false);
+
+
 }
 
-// Called every frame
+
 void AComponentePlataforma::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (!detener) {
-		if (!mover)
-		{
-			if (posicionActual.Y < posicionFinal.Y)
-			{
-				posicionActual.Y += incrementoY;
-			}
-			else
-			{
-				mover = true;
-			}
-		}
-		else
-		{
-			if (posicionActual.Y > posicionInicial.Y)
-			{
-				posicionActual.Y -= incrementoY;
-			}
-			else {
-				mover = false;
-			}
-		}
-	
-	}
-	/*zPosicionActual += zIncrementoZ;*/
-	SetActorLocation(posicionActual);
+	//if (!detener) {
+	//
+	//	if (!mover)
+	//	{
+	//		if (posicionActual.Y < posicionFinal.Y)
+	//		{
+	//			posicionActual.Y += incrementoY;
+	//		}
+	//		else
+	//		{
+	//			mover = true;
+	//		}
+	//	}
+	//	else
+	//	{
+	//		if (posicionActual.Y > posicionInicial.Y)
+	//		{
+	//			posicionActual.Y -= incrementoY;
+	//		}
+	//		else {
+	//			mover = false;
+	//		}
+	//	}
+	//
+	//}
+	///*zPosicionActual += zIncrementoZ;*/
+	//SetActorLocation(posicionActual);
 
 }
 
 // Called to bind functionality to input
-void AComponentePlataforma::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
+//void AComponentePlataforma::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+//{
+//	Super::SetupPlayerInputComponent(PlayerInputComponent);
+//
+//}
 

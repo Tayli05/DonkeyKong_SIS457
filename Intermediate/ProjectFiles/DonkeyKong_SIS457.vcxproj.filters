@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{71832B29-A291-4795-9AFC-8162C8FA4026}</UniqueIdentifier>
+      <UniqueIdentifier>{E04A68E2-4A30-459E-9430-02131A5B0BCD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -11,11 +11,10 @@
     <None Include="..\..\Source\DonkeyKong_SIS457Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
-    <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
-    <None Include="..\..\TrabajoGrupo7.zip" />
+    <None Include="..\..\CuboDisparador.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{101DBE32-E3F1-44D9-AD81-B6AA95744A72}</UniqueIdentifier>
+      <UniqueIdentifier>{C506BCA0-050A-488D-B5AA-24CF579CC09F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{D877F79D-4F0B-401C-A03E-D68AD86859CD}</UniqueIdentifier>
+      <UniqueIdentifier>{A306D989-9E79-4B0B-A804-E45D78C85BB0}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
@@ -96,6 +95,36 @@
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_SIS457\EnemigoPlatano.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Muro.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Muro.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\MuroCongelado.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\MuroCongelado.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\MuroElectrico.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\MuroElectrico.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\MuroLadrillo.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\MuroLadrillo.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\MuroPegajoso.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\MuroPegajoso.h">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Obstaculo.cpp">

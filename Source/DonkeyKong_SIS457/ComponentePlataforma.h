@@ -26,7 +26,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	protected:
 		UPROPERTY(EditAnywhere)
@@ -43,5 +43,7 @@ public:
 	void setDetener(bool d) { detener = d; };
 
 
+private:
+	int32 Index;
 
 };

@@ -37,8 +37,9 @@ public:
   AProjectile* Proyectil;
   TArray<ACubo*> CantCajas;
 
-  //ABarril* Barril01;
- //metodo para mover los barriles
+  //muros
+ 
+
  void SpawnBarril();
 
 private:

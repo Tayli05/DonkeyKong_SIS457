@@ -35,7 +35,7 @@ public:
 		virtual void Disparar();
 
 		float TiempoEntreProyectil;
-		float TiempoPrimerProyectil;
+		//float TiempoPrimerProyectil;
 		float TiempoDisparo;
 		int HealthEnemis;
 };

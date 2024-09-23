@@ -262,8 +262,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
+/FI"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\DonkeyKong_SIS457Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\DonkeyKong_SIS457Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\DonkeyKong_SIS457Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Cubo.cpp"
-/FI"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.h"
+/FI"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h"
 /Fo"E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Cubo.cpp.obj"
 /TP
 /GR-

@@ -14,8 +14,8 @@ ACubo::ACubo()
 	RootComponent = MeshCubo;
 
 	HealthEnemis = 200.0f;
-	TiempoEntreProyectil = 1.0f;
-	TiempoPrimerProyectil = 1.0f;
+	TiempoEntreProyectil = 0.5f;
+	//TiempoPrimerProyectil = 0.5f;
 	
 	
 }
