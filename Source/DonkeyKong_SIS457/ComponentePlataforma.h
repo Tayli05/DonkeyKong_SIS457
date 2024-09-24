@@ -36,14 +36,12 @@ public:
 		FVector posicionActual;
 		FVector posicionFinal;
 		float incrementoY;
+		float incrementoZ;
 		bool detener;
 
 public:
 	bool getDetener() { return detener; };
 	void setDetener(bool d) { detener = d; };
 
-
-private:
-	int32 Index;
 
 };

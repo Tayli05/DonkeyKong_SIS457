@@ -5,21 +5,34 @@
 #include "Components/StaticMeshComponent.h"
 #include "Materials/Material.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "Particles/ParticleSystemComponent.h"
+
 
 
 AMuroLadrillo::AMuroLadrillo()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshAsset(TEXT("StaticMesh'/Game/Geometry/Meshes/Muro/Muro_01.Muro_01'"));
-	MeshMuro->SetStaticMesh(MeshAsset.Object);
-	RootComponent = MeshMuro;
-
-	MeshMuro->SetWorldScale3D(FVector(30.f, 40.f, 18.f));
-
-	static ConstructorHelpers::FObjectFinder<UMaterial> BrickMaterialAsset(TEXT("Material'/Game/StarterContent/Materials/M_Brick_Clay_New.M_Brick_Clay_New'"));
-	if (BrickMaterialAsset.Succeeded())
+	
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MuroLadrilloAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+	if (MuroLadrilloAsset.Succeeded())
 	{
-		BrickMaterial = BrickMaterialAsset.Object;
+		MeshMuro->SetStaticMesh(MuroLadrilloAsset.Object);
+	}
+
+	MeshMuro->SetWorldScale3D(FVector(3.5f, 0.5f, 2.f));
+
+	static ConstructorHelpers::FObjectFinder<UMaterial> MaterialAsset(TEXT("Material'/Game/StarterContent/Materials/M_Brick_Clay_New.M_Brick_Clay_New'"));
+	if (MaterialAsset.Succeeded())
+	{
+		MeshMuro->SetMaterial(0, MaterialAsset.Object);
+	}
+
+	ParticleSystem = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystem"));
+	ParticleSystem->SetupAttachment(RootComponent);
+
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleSystemAsset(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
+	if (ParticleSystemAsset.Succeeded())
+	{
+		ParticleSystem->SetTemplate(ParticleSystemAsset.Object);
 	}
 
 }
@@ -28,22 +41,11 @@ void AMuroLadrillo::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (BrickMaterial) // Asegurarse de que el material esté asignado
-	{
-		// Crear una instancia dinámica del material basado en BrickMaterial
-		MaterialInstance = UMaterialInstanceDynamic::Create(BrickMaterial, this);
-
-		if (MaterialInstance && MeshMuro)
-		{
-			// Asignar el material a la malla estática
-			MeshMuro->SetMaterial(0, MaterialInstance);
-		}
-	}
 }
 
 void AMuroLadrillo::Chocar()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Muro Ladrillo"));
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Choque Muro Ladrillo"));
 }
 
 void AMuroLadrillo::Tick(float DeltaTime)

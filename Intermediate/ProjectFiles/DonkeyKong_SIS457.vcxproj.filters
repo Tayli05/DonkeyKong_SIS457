@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{E04A68E2-4A30-459E-9430-02131A5B0BCD}</UniqueIdentifier>
+      <UniqueIdentifier>{70BA3DEF-F3AD-49A8-91DF-21EFEE389D8D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\CuboDisparador.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{C506BCA0-050A-488D-B5AA-24CF579CC09F}</UniqueIdentifier>
+      <UniqueIdentifier>{D1C660D4-5F2A-48EF-B586-A9259FA4E718}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{A306D989-9E79-4B0B-A804-E45D78C85BB0}</UniqueIdentifier>
+      <UniqueIdentifier>{7D19B8DF-92C3-4FD9-9014-6DE16EC70437}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
@@ -131,12 +131,6 @@
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Obstaculo.h">
-      <Filter>Source\DonkeyKong_SIS457</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Piso.cpp">
-      <Filter>Source\DonkeyKong_SIS457</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Piso.h">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Projectile.cpp">

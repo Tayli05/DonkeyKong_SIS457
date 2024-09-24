@@ -121,9 +121,9 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
    
 	//CREAR MUROS
 
-    GetWorld()->SpawnActor < AMuroLadrillo > (AMuroLadrillo::StaticClass(),FVector(950.0f, -600.0f, 700.0f), FRotator(0.0f, 0.0f, 0.0f));
+    GetWorld()->SpawnActor < AMuroLadrillo > (AMuroLadrillo::StaticClass(),FVector(1100.0f, -600.0f, 600.0f), FRotator(0.0f, 0.0f, 0.0f));
 	GetWorld()->SpawnActor < AMuroElectrico >(AMuroElectrico::StaticClass(), FVector(1050.0f, -600.0f, 1750.0f), FRotator(0.0f, 0.0f, 0.0f));
-	GetWorld()->SpawnActor < AMuroCongelado >(AMuroCongelado::StaticClass(), FVector(1000.0f, 720.0f, 2400.0f), FRotator(0.0f, 0.0f, 0.0f));
+	GetWorld()->SpawnActor < AMuroCongelado >(AMuroCongelado::StaticClass(), FVector(1000.0f, 720.0f, 1250.0f), FRotator(0.0f, 0.0f, 0.0f));
 	GetWorld()->SpawnActor < AMuroPegajoso >(AMuroPegajoso::StaticClass(), FVector(1200.0f, -850.0f, 2800.0f), FRotator(0.0f, 0.0f, 0.0f));
 
 

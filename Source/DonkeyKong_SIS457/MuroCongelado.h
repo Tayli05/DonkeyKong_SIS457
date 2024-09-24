@@ -20,6 +20,8 @@ public:
 protected:
 
 	virtual void BeginPlay() override;
+	UParticleSystemComponent* ParticleSystem;
+
 
 public:
 	virtual void Tick(float DeltaTime) override;

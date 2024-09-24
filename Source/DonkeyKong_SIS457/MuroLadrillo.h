@@ -19,13 +19,13 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+	UParticleSystemComponent* ParticleSystem;
+
 	virtual void Chocar() override;
 public:
 
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category = "Materials")
-	UMaterial* BrickMaterial;
 
-	
 };

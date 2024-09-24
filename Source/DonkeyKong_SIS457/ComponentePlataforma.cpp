@@ -18,7 +18,6 @@ AComponentePlataforma::AComponentePlataforma()
 	//modificar a lo que se necesite el tamaño de la plataforma
 	MeshPlataforma->SetWorldScale3D(FVector(5.0f, 30.0f, 5.0f));
 
-	
 }
 
 // Called when the game starts or when spawned
