@@ -70,3 +70,12 @@ void AProjectile::FireInDirection(const FVector& ShootDirection)
 	ProjectileMovement->Velocity = ShootDirection * ProjectileMovement->InitialSpeed;
 }
 
+void AProjectile::FireInDirection2(const FVector& ShootDirection)
+{
+	ProjectileMovement->Velocity = ShootDirection * ProjectileMovement->InitialSpeed;
+}
+
+
+
+
+

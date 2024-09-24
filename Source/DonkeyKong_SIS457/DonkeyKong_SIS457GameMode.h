@@ -11,6 +11,7 @@ class AObstaculo;
 class ABarril;
 class ACubo;
 class ADonkeyKong_SIS457Character;
+class AConoDisparador;
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
 {
@@ -31,11 +32,15 @@ public:
 
   //TArray<AComponentePlataforma*> Plataformas;
 
-  TMap<int32, AComponentePlataforma*> Plataformas;
+ // TMap<int32, AComponentePlataforma*> Plataformas;
+TArray<AComponentePlataforma*> Plataformas;
   TArray<AObstaculo*> Obstaculos;
   TArray<ABarril*> Barriles;
   AProjectile* Proyectil;
-  TArray<ACubo*> CantCajas;
+
+  //TArray<ACubo*> CantCajas;
+  ACubo* Caja;
+  AConoDisparador* ConoDisparador;
 
   //muros
  

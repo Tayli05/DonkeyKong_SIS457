@@ -47,5 +47,7 @@ public:
 
 
 		void FireInDirection(const FVector& ShootDirection);
+
+		void FireInDirection2(const FVector& ShootDirection);
 		
 };

@@ -16,7 +16,7 @@ AComponentePlataforma::AComponentePlataforma()
 	RootComponent = MeshPlataforma;
 
 	//modificar a lo que se necesite el tamaño de la plataforma
-	MeshPlataforma->SetWorldScale3D(FVector(5.0f, 30.0f, 5.0f));
+	MeshPlataforma->SetWorldScale3D(FVector(3.0f, 3.0f, 3.0f));
 
 }
 

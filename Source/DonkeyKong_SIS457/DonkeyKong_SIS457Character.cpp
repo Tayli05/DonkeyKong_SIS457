@@ -35,7 +35,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Rotation of the character should not affect rotation of boom
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->TargetArmLength = 1500.f;
+	CameraBoom->TargetArmLength = 2500.f;
 	CameraBoom->SocketOffset = FVector(0.f,0.f,75.f);
 	CameraBoom->SetRelativeRotation(FRotator(0.f,180.f,0.f));
 
@@ -61,6 +61,10 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+
+	// Establecer la posición inicial del personaje en la parte superior de la plataforma
+	//SetActorLocation(FVector(131.0f, 250.0f, 2500.0f));  // Ajusta los valores según la altura de tus plataformas
+
 
 }
 
@@ -102,6 +106,9 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 void ADonkeyKong_SIS457Character::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Establecer la posición inicial del personaje
+	SetActorLocation(FVector(1221.0f, -450.0f, 3850.0f));  // Ajusta los valores X, Y, Z según tu nivel
 
 }
 

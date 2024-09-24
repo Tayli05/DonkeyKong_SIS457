@@ -33,3 +33,5 @@ E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroPegajoso.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroPegajoso.generated.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroLadrillo.h
 E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroLadrillo.generated.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroPiedra.h
+E:\LABORATORIOS_SIS457\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroPiedra.generated.h

@@ -15,6 +15,7 @@
 #include "MuroCongelado.h"
 #include "MuroPegajoso.h"
 #include "MuroLadrillo.h"
+#include "MuroPiedra.h"
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -35,37 +36,81 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Purple, TEXT("Actor Moviendose"));
 
     // Crear plataformas
-    FVector posicionInicial = FVector(-380.0f,-720.0f, -400.0f);
+  //  FVector posicionInicial = FVector(-380.0f,-720.0f, -400.0f);
+  //  FRotator rotacionInicial = FRotator(0.0f, 0.0f, 11.0f);
+  //  FTransform SpawnLocationP;
+  //  float alturaplataformas = 500.0f;
+
+  //  for (int i = 0; i < 6; i++)
+  //  {
+  //      if ( i % 2 == 0) {
+  //          posicionInicial.Y += 500.0f;
+  //        posicionInicial.Z += 150.0f;
+  //         
+  //      }else{
+  //          posicionInicial.Y -= 500.0f;
+  //          posicionInicial.Z -= 100.0f;
+  //         
+		//}
+  //      if (i % 2 == 1) {
+  //          rotacionInicial.Roll = 0.0f; // Sin inclinación
+  //         posicionInicial.Z += 200.0f;
+  //      }
+  //      else {
+  //         rotacionInicial.Roll = 11.0f; // Inclinación
+		// posicionInicial.Z -= 110.0f;
+  //      }
+  //      
+  //      rotacionInicial.Roll = rotacionInicial.Roll * -1;
+  //      SpawnLocationP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z + (i * alturaplataformas)));
+  //      AComponentePlataforma* NuevaPlataforma = GetWorld()->SpawnActor<AComponentePlataforma>(SpawnLocationP.GetLocation(), rotacionInicial);
+  //      Plataformas.Add(i, NuevaPlataforma);
+
+
+  //  }
+    FVector posicionInicial = FVector(400.0f, -1350.0f, -30.0f);
     FRotator rotacionInicial = FRotator(0.0f, 0.0f, 11.0f);
     FTransform SpawnLocationP;
     float alturaplataformas = 500.0f;
+    int numPlataformasPorPiso = 10;
 
-    for (int i = 0; i < 6; i++)
+    float distanciaYEntrePlataformas = 100.0f; // Distancia vertical entre plataformas (más corta)
+
+    for (int i = 0; i < 6; i++) // Ciclo para pisos
     {
-        if ( i % 2 == 0) {
-            posicionInicial.Y += 500.0f;
-          posicionInicial.Z += 150.0f;
-           
-        }else{
-            posicionInicial.Y -= 500.0f;
-            posicionInicial.Z -= 100.0f;
-           
-		}
-        if (i % 2 == 1) {
-            rotacionInicial.Roll = 0.0f; // Sin inclinación
-           posicionInicial.Z += 200.0f;
-        }
-        else {
-           rotacionInicial.Roll = 11.0f; // Inclinación
-		 posicionInicial.Z -= 110.0f;
-        }
-        
-        rotacionInicial.Roll = rotacionInicial.Roll * -1;
-        SpawnLocationP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z + (i * alturaplataformas)));
-        AComponentePlataforma* NuevaPlataforma = GetWorld()->SpawnActor<AComponentePlataforma>(SpawnLocationP.GetLocation(), rotacionInicial);
-        Plataformas.Add(i, NuevaPlataforma);
+        for (int j = 0; j < numPlataformasPorPiso; j++) // Ciclo para plataformas por piso
+        {
+            if (i % 2 == 0) {
+                
+                posicionInicial.Y += distanciaYEntrePlataformas;
+                posicionInicial.Z += 150.0f;
 
+				posicionInicial.Y += 200.0f;
+            }
+            else {
+				posicionInicial.Y -= distanciaYEntrePlataformas;
+              posicionInicial.Z -= 100.0f;
 
+				posicionInicial.Y -= 200.0f;
+            }
+
+            if (i % 2 == 1) {
+                rotacionInicial.Roll = 0.0f; // Sin inclinación
+               posicionInicial.Z += 80.0f;
+            }
+            else {
+                rotacionInicial.Roll = 11.0f; // Inclinación
+                posicionInicial.Z -= 110.0f;
+            }
+
+            rotacionInicial.Roll = rotacionInicial.Roll * -1;
+
+            // Ajuste de la distancia entre plataformas en el eje X
+            SpawnLocationP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z + (i * alturaplataformas)));
+
+            AComponentePlataforma* NuevaPlataforma = GetWorld()->SpawnActor<AComponentePlataforma>(SpawnLocationP.GetLocation(), rotacionInicial);
+            Plataformas.Add(NuevaPlataforma);
+        }
     }
 
     //CREAR OBSTACULOS
@@ -99,32 +144,52 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
   //CREAR CUBOs
 
-    float minX = 1200.0f;
+    /*float minX = 1200.0f;
     float maxX = 1200.0f;
     float minY = -1200.0f;
     float maxY = 1000.0f;
-    float minZ = 1000.0f;
-    float maxZ = 4000.0f;
+    float minZ = 100.0f;
+    float maxZ = 1000.0f;*/
 
-    for (int32 i = 0; i < 5; i++)
-    {
-        // Generar una ubicación aleatoria dentro del rango definido
-        FVector RandomLocation = FVector(
-            FMath::RandRange(minX, maxX), // Posición X aleatoria
-            FMath::RandRange(minY, maxY), // Posición Y aleatoria
-            FMath::RandRange(minZ, maxZ)  // Posición Z aleatoria
-        );
+    //for (int32 i = 0; i < 2; i++)
+    //{
+    //    // Generar una ubicación aleatoria dentro del rango definido
+    //    FVector RandomLocation = FVector(
+    //        FMath::RandRange(minX, maxX), // Posición X aleatoria
+    //        FMath::RandRange(minY, maxY), // Posición Y aleatoria
+    //        FMath::RandRange(minZ, maxZ)  // Posición Z aleatoria
+    //    );
 
-        // Spawn de la caja en la ubicación aleatoria
-        CantCajas.Add(GetWorld()->SpawnActor<ACubo>(RandomLocation, FRotator(0.0f, 0.0f, 0.0f)));
-    }
+    //    // Spawn de la caja en la ubicación aleatoria
+    //    CantCajas.Add(GetWorld()->SpawnActor<ACubo>(RandomLocation, FRotator(0.0f, 0.0f, 0.0f)));
+    //}
+
+	//CREAR Cono Disparador
+	FTransform SpawnLocationCubo;
+	FVector posicionInicialCubo = FVector(1200.0f, 420.0f, 2200.0f);
+	FRotator rotacionInicialCubo = FRotator(0.0f, 0.0f, 0.0f);
+	SpawnLocationCubo.SetLocation(FVector(posicionInicialCubo.X, posicionInicialCubo.Y, posicionInicialCubo.Z));    
+	Caja = GetWorld()->SpawnActor<ACubo>(SpawnLocationCubo.GetLocation(), rotacionInicialCubo);
+	GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Black, TEXT("Cubo Creado"));
+
    
+
+	//CREAR CONO DISPARADOR
+	/*FTransform SpawnLocationCono;
+	FVector posicionInicialCono = FVector(1200.0f, -1200.0f, 1000.0f);
+	FRotator rotacionInicialCono = FRotator(0.0f, 0.0f, 0.0f);
+	SpawnLocationCono.SetLocation(FVector(posicionInicialCono.X, posicionInicialCono.Y, posicionInicialCono.Z));
+	ConoDisparador = GetWorld()->SpawnActor<AConoDisparador>(SpawnLocationCono.GetLocation(), rotacionInicialCono);
+	GEngine->AddOnScreenDebugMessage(-1, 50, FColor::Black, TEXT("Cono Disparador Creado"));
+	*/
 	//CREAR MUROS
 
-    GetWorld()->SpawnActor < AMuroLadrillo > (AMuroLadrillo::StaticClass(),FVector(1100.0f, -600.0f, 600.0f), FRotator(0.0f, 0.0f, 0.0f));
+    GetWorld()->SpawnActor < AMuroLadrillo > (AMuroLadrillo::StaticClass(),FVector(1100.0f, -600.0f, 850.0f), FRotator(0.0f, 0.0f, 0.0f));
 	GetWorld()->SpawnActor < AMuroElectrico >(AMuroElectrico::StaticClass(), FVector(1050.0f, -600.0f, 1750.0f), FRotator(0.0f, 0.0f, 0.0f));
 	GetWorld()->SpawnActor < AMuroCongelado >(AMuroCongelado::StaticClass(), FVector(1000.0f, 720.0f, 1250.0f), FRotator(0.0f, 0.0f, 0.0f));
 	GetWorld()->SpawnActor < AMuroPegajoso >(AMuroPegajoso::StaticClass(), FVector(1200.0f, -850.0f, 2800.0f), FRotator(0.0f, 0.0f, 0.0f));
+	GetWorld()->SpawnActor < AMuroPiedra >(AMuroPiedra::StaticClass(), FVector(1200.0f, 750.0f, 900.0f), FRotator(0.0f, 0.0f, 0.0f));
+
 
 
 }
